@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=3]
 
-[node name="StartMenu" type="Control"]
+[node name="StartMenu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -64,6 +66,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_colors/font_color = Color( 0.753906, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Jumpy John"
 percent_visible = 1.0
 lines_skipped = 0
@@ -116,6 +120,51 @@ group = null
 text = "Quit"
 flat = false
 align = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Sky" type="Node" parent="CanvasLayer" index="0"]
+
+[node name="Sky2" type="Sprite" parent="CanvasLayer/Sky" index="0"]
+
+position = Vector2( -320, 320 )
+texture = ExtResource( 2 )
+
+[node name="Sky3" type="Sprite" parent="CanvasLayer/Sky" index="1"]
+
+position = Vector2( -320, -320 )
+texture = ExtResource( 2 )
+
+[node name="Sky4" type="Sprite" parent="CanvasLayer/Sky" index="2"]
+
+position = Vector2( 320, -320 )
+texture = ExtResource( 2 )
+
+[node name="Sky5" type="Sprite" parent="CanvasLayer/Sky" index="3"]
+
+position = Vector2( 960, -320 )
+texture = ExtResource( 2 )
+
+[node name="Sky6" type="Sprite" parent="CanvasLayer/Sky" index="4"]
+
+position = Vector2( 960, 320 )
+texture = ExtResource( 2 )
+
+[node name="Sky7" type="Sprite" parent="CanvasLayer/Sky" index="5"]
+
+position = Vector2( 320, 320 )
+texture = ExtResource( 2 )
+
+[node name="Idle0" type="Sprite" parent="CanvasLayer/Sky" index="6"]
+
+position = Vector2( 320, 250 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 

@@ -7,10 +7,7 @@ path="res://.import/genericItem_color_158.png-21cc6d206ca6f1facba28addad59af3e.s
 [deps]
 
 source_file="res://Sprites/Items/genericItem_color_158.png"
-source_md5="0d30a143ca49409d1f4bd81db6299046"
-
 dest_files=[ "res://.import/genericItem_color_158.png-21cc6d206ca6f1facba28addad59af3e.stex" ]
-dest_md5="0a3d3ef5591811b15a2227fbbdc3425a"
 
 [params]
 
