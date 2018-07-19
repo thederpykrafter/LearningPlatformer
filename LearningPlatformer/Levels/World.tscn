@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
+[ext_resource path="res://Objects/WorldComplete.tscn" type="PackedScene" id=2]
+[ext_resource path="res://AutoTile/DirtAutoTile.tres" type="TileSet" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Cash.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+
+position = Vector2( 192, 96 )
+script = ExtResource( 1 )
+
+[node name="WorldComplete" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 368, 32 )
+scale = Vector2( 1, 1 )
+next_world = "res://Levels/World2.tscn"
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65540, 0, 6, -65539, 0, 196609, -65538, 0, 196609, -65537, 0, 196609, -131072, 0, 196609, -131071, 0, 196609, -131070, 0, 196609, -131069, 0, 196609, -131068, 0, 196609, -131067, 0, 196609, -131066, 0, 7, -4, 0, 65541, -65530, 0, 65541, 65532, 0, 65541, 6, 0, 65541, 131068, 0, 65541, 65538, 0, 1, 65539, 0, 2, 65541, 0, 1, 65542, 0, 11, 196604, 0, 65542, 196605, 0, 7, 131073, 0, 1, 131074, 0, 65540, 131075, 0, 131074, 131077, 0, 131073, 131078, 0, 131074, 262141, 0, 65542, 262142, 0, 196609, 262143, 0, 196609, 196608, 0, 196609, 196609, 0, 65544, 196610, 0, 131072, 196611, 0, 65547, 196612, 0, 196609, 196613, 0, 65544, 196614, 0, 65538 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 96 )
+
+[node name="Cash" parent="." index="3" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 32, 32 )
+
+[node name="Sprite" parent="Cash" index="0"]
+
+position = Vector2( 0, 0 )
+rotation = -0.0872665
+
+[node name="Cash2" parent="." index="4" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( -32, 32 )
+
+[node name="Cash3" parent="." index="5" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( -96, 32 )
+
+
+[editable path="Cash"]
